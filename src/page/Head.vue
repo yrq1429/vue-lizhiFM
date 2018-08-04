@@ -7,7 +7,7 @@
         </router-link>
       </div>
       <div class="table-item">
-        <router-link to="/live">直播</router-link>
+        <router-link to="/live/Hot">直播</router-link>
       </div>
       <div class="table-item">
         <router-link to="/voice">声音</router-link>
@@ -18,12 +18,9 @@
       <div class="table-item">
         <router-link to="/follow">关注</router-link>
       </div>
-      <div class="table-item hasImg" >
-        <router-link :to="'/homepage/'+1">
+      <div class="table-item hasImg">
           <img src="../assets/images/person.png" alt="">
-        </router-link>
       </div>
-      
    </div>
    <div class="header-search">
     </div>
@@ -31,14 +28,20 @@
     <router-view></router-view>
     </div>
 </div>
-  
- 
-  
 </template>
 
 <script>
 export default {
-
+components: {
+  
+},
+data () {
+  return {
+  }
+},
+methods: {
+  
+}
 }
 </script>
 

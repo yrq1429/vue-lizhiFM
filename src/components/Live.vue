@@ -5,8 +5,8 @@
     </div>
       <div class="live-type">
         <div class="live-type__item">
-          <router-link to="/live/Hot" @click.native="changeNav" ref="hot">
-          <div class="image">
+          <router-link to="/live/Hot" ref="hot">
+          <div class="image active">
             <img src="../assets/images/hot.png" alt="">
           </div>
             <p class="title">热门</p>
@@ -52,14 +52,13 @@
 </template>
 
 <script>
-import { getBroadcast, getHotLive } from '@/api/getData'
+import { getBroadcast } from '@/api/getData'
 import Banner from '@/components/Banner'
 export default {
   data() {
     return {
       Broadcast: [],
-      sumHotData: [],
-      hot: "../assets/images/hot.png"
+      sumHotData: []
     }
   },
   components: {
@@ -69,15 +68,9 @@ export default {
         const data = await getBroadcast();
         const bUrl= data.data.Broadcast.url;
         this.Broadcast = bUrl;
-        const hotData = await getHotLive();
-        // console.log(hotData.hot)
-        this.sumHotData = hotData.hot;
-        console.log(this.sumHotData)
     },
   methods: {
-    changeNav () {
-
-    }
+    
   }
 }
 </script>
@@ -106,8 +99,6 @@ import '@/assets/style/reset.styl'
       width 2rem
       height 2rem
       margin 0 auto
-      // background url("../assets/images/hot.png") no-repeat center
-      // background-size 2rem
       img 
         width 2rem
         height 2rem

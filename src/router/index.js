@@ -21,14 +21,13 @@ export default new Router({
       path: '/',
       name: 'live',
       component: Live,
-      redirect: '/live'
+      redirect: '/live/Hot'
     },
     {
       path: '/live',
       name: 'live',
       component: Live,
       children:[
-        {path: '/', component: Hot},
         { path: '/live/Hot', component: Hot},
         { path: '/live/Music', component: Music},
         { path: '/live/Erciyuan', component: Erciyuan},
