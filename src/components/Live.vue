@@ -4,9 +4,9 @@
       <app-banner :listImg="Broadcast"></app-banner>
     </div>
       <div class="live-type">
-        <div class="live-type__item">
+        <div class="live-type__item active">
           <router-link to="/live/Hot" ref="hot">
-          <div class="image active">
+          <div class="image ">
             <img src="../assets/images/hot.png" alt="">
           </div>
             <p class="title">热门</p>
@@ -79,7 +79,7 @@ export default {
 import '@/assets/style/reset.styl'
 
 .head_Broadcast
-  margin 1rem 0
+  margin 0 auto
 .live-type
   width 100%
   height 4rem

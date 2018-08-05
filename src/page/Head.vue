@@ -23,6 +23,10 @@
       </div>
    </div>
    <div class="header-search">
+     <!-- <p class="content"> -->
+       周末优选
+     <!-- </p> -->
+     
     </div>
     <div class="view">
     <router-view></router-view>
@@ -65,4 +69,18 @@ methods: {
     img 
       width 24px
       height 24px
+.header-search
+  width 95%
+  height 30px
+  border 1px solid #179179
+  margin 0 auto
+  // background-color #179179
+  opacity .5
+  border-radius 5px
+  display flex
+  color #179
+  margin-bottom 10px
+//   .content
+//     justify-content center 
+//     align-items center
 </style>

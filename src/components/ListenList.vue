@@ -35,10 +35,10 @@ export default {
   justify-content: center;
   align-items center
 .hotList_item
-  width 190px
+  width 170px
   height 250px
   margin 0 5px
-  margin-bottom 30px
+  // margin-bottom 30px
   box-sizing border-box
   border-radius 15px
   .imgInfo
