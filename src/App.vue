@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <Head></Head>
+    <div class="head">
+      <Head></Head>
+    </div>
   </div>
 </template>
 
@@ -10,11 +12,16 @@ export default {
   name: 'App',
   data () {
     return {
-     
+      // showHeader:""
     }
   },
   components: {
     Head
+  },
+  computed: {
+    // showHeader() {
+    //   return this.$store.state.showHeader
+    // }
   }
 }
 </script>

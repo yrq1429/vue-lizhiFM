@@ -2,11 +2,12 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide" v-for="(str, index) in listImg" :key="index">
-              <img :src="str" alt="" />
-              
+              <img :src="str" />
             </div>
+             <!-- <div class="swiper-slide" v-for="(str,index) in listImg" :key="index" :style="{ backgroundImage: 'url(' + str + ')' }"></div> -->
+            <div class="swiper-pagination swiper-pagination-white"></div>
         </div>
-        <div class="swiper-pagination swiper-pagination-white"></div>
+        
     </div>
 </template>
 
@@ -17,13 +18,21 @@
         props: ['listImg'],
         mounted() {
             // console.log('mounted', this)
+            // https://segmentfault.com/a/1190000002962202解决划不动问题
             var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
                 paginationClickable: true,
                 loop: true,
                 speed: 600,
-                autoplay: 4000,
-                onTouchEnd: function() {
+                autoplay: {
+                  delay: 3000
+                },
+                observer:true,
+                observeParents:true,
+                 on: {
+                  onTouchEnd: function () {
                     swiper.startAutoplay()
+                  }
                 }
             });
         }

@@ -1,26 +1,49 @@
 <template>
-  <div class="hotList">
-    <div class="hotList_item" v-for="(item, index) in sumHotData" :key="index">
-      <div class="imgInfo">
-        <img :src="item.img_url" alt="">
-        <div class="listen_peop">
-          <img class="listen_peop_icon"  src="../assets/images/listen_peop.png" alt="">
-          <div class="peop">{{item.listen_peop}}人</div>
-        </div>
+  <div class="content">
+    <div class="hotList">
+      <div class="hotList_item" v-for="(item, index) in sumHotData" :key="index">
+        <router-link class="hotList_item" :to="'/Live/'+item.FM_num"  @click.native="jumpToContent(item, $event)">
+          <div class="imgInfo">
+            <img :src="item.img_url" alt="">
+            <div class="listen_peop">
+              <img class="listen_peop_icon"  src="../assets/images/listen_peop.png" alt="">
+              <div class="peop">{{item.listen_peop}}人</div>
+            </div>
+          </div>
+          <div class="title">{{item.title}}</div>
+          <div class="author">{{item.auth}}</div>
+        </router-link>
       </div>
-      <div class="title">{{item.title}}</div>
-      <div class="author">{{item.auth}}</div>
     </div>
+    <listen-content ref="showListenContent"></listen-content>
   </div>
+  
 </template>
-
 <script>
+import ListenContent from './ListenContent/ListenContent'
 // import {  getHotLive } from '@/api/getData'
 export default {
   props: {
     sumHotData: {
       type: Array,
       default: []
+    }
+  },
+  methods: {
+    jumpToContent (item, event) {
+      // this.$store.state.showHeader = false;
+      if (!event._constructed) {
+          return;
+        }
+      this.$refs.showListenContent.show();
+    }
+  },
+  components: {
+    "listen-content": ListenContent
+  },
+  computed: {
+    showContent() {
+      return !this.$store.state.showHeader
     }
   }
 
@@ -66,4 +89,8 @@ export default {
   .author
     font-size 14px
     color #179179
+a
+  color #000
+  text-decoration none
+
 </style>

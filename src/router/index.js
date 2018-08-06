@@ -24,7 +24,7 @@ export default new Router({
       redirect: '/live/Hot'
     },
     {
-      path: '/live',
+      path: '/live/:listen_id',
       name: 'live',
       component: Live,
       children:[
