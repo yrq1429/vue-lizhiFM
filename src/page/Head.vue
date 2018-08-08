@@ -18,19 +18,14 @@
       <div class="table-item">
         <router-link to="/follow">关注</router-link>
       </div>
-      <div class="table-item hasImg">
+      <div class="table-item hasImg" @click="homePage()">
           <img src="../assets/images/person.png" alt="">
       </div>
    </div>
-   <div class="header-search">
-     <!-- <p class="content"> -->
+    <div class="header-search">
        周末优选
-     <!-- </p> -->
-     
     </div>
-    <div class="view">
-    <router-view></router-view>
-    </div>
+    
 </div>
 </template>
 
@@ -44,7 +39,10 @@ data () {
   }
 },
 methods: {
-  
+  homePage() {
+    console.log("a")
+    // this.$router.push({path:'HomePage'})
+  }
 }
 }
 </script>

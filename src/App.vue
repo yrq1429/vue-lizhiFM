@@ -1,27 +1,36 @@
 <template>
   <div id="app">
-    <div class="head">
+    <div class="head" v-if="showHeader">
       <Head></Head>
     </div>
+    <router-view ></router-view>
+    
+    <div class="view">
+    </div>   
   </div>
 </template>
 
 <script>
 import Head from '@/page/Head'
+import ListenContent from '@/components/ListenContent/ListenContent'
 export default {
   name: 'App',
   data () {
     return {
-      // showHeader:""
+
     }
   },
   components: {
-    Head
+    Head,
+    ListenContent
   },
   computed: {
-    // showHeader() {
-    //   return this.$store.state.showHeader
-    // }
+    showHeader() {
+      return this.$store.state.showHeader
+    },
+    showListenContent() {
+      return this.$store.state.showListenContent      
+    }
   }
 }
 </script>

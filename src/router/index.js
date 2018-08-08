@@ -11,6 +11,7 @@ import Erciyuan from '@/components/Erciyuan'
 import Emotion from '@/components/Emotion'
 import Happy from '@/components/Happy'
 import Classification from '@/components/Classification'
+import ListenContent from '@/components/ListenContent/ListenContent'
 
 Vue.use(Router)
 
@@ -24,7 +25,7 @@ export default new Router({
       redirect: '/live/Hot'
     },
     {
-      path: '/live/:listen_id',
+      path: '/live',
       name: 'live',
       component: Live,
       children:[
@@ -59,6 +60,11 @@ export default new Router({
       path: '/homepage',
       name: 'homepage',
       component: Homepage
+    },
+    {
+      path: '/user/:listen_id',
+      name: 'listenContent',
+      component: ListenContent
     }
   ]
 })

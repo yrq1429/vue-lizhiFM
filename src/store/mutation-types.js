@@ -1,0 +1,3 @@
+export const UPDATE_HEAD = 'UPDATE_HEAD';
+export const SHOW_LISTEN_CONTENT = 'SHOW_LISTEN_CONTENT';
+export const SHOW_HEAD = 'SHOW_HEAD';

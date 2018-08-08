@@ -8,7 +8,8 @@ Vue.use(Vuex)
 
 // lbs应用
 const state = {
-  showHeader: true
+  showHeader: true,
+  showListenContent: false
 }
 
 export default new Vuex.Store({
